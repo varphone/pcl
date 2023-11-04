@@ -317,8 +317,12 @@ pcl_round (float number)
 #endif
 
 #if defined WIN32 || defined _WIN32 || defined WINCE || defined __MINGW32__
-    #ifdef PCLAPI_EXPORTS
-        #define PCL_EXPORTS __declspec(dllexport)
+    #ifdef PCL_SHARED_LIBS
+        #ifdef PCLAPI_EXPORTS
+            #define PCL_EXPORTS __declspec(dllexport)
+        #else
+            #define PCL_EXPORTS __declspec(dllimport)
+        #endif
     #else
         #define PCL_EXPORTS
     #endif

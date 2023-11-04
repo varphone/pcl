@@ -274,7 +274,7 @@ namespace pcl
         * \param[in] angle_width an angle (in radians) defining the horizontal bounds of the sensor (defaults to 2*pi (360deg))
         * \param[in] angle_height an angle (in radians) defining the vertical bounds of the sensor (defaults to pi (180deg))
         */
-      void
+      PCL_EXPORTS void
       createEmpty (float angular_resolution, const Eigen::Affine3f& sensor_pose=Eigen::Affine3f::Identity (),
                    RangeImage::CoordinateFrame coordinate_frame=CAMERA_FRAME, float angle_width=pcl::deg2rad (360.0f),
                    float angle_height=pcl::deg2rad (180.0f));
@@ -289,7 +289,7 @@ namespace pcl
         * \param[in] angle_width an angle (in radians) defining the horizontal bounds of the sensor (defaults to 2*pi (360deg))
         * \param[in] angle_height an angle (in radians) defining the vertical bounds of the sensor (defaults to pi (180deg))
         */
-      void
+      PCL_EXPORTS void
       createEmpty (float angular_resolution_x, float angular_resolution_y,
                    const Eigen::Affine3f& sensor_pose=Eigen::Affine3f::Identity (),
                    RangeImage::CoordinateFrame coordinate_frame=CAMERA_FRAME, float angle_width=pcl::deg2rad (360.0f),
@@ -651,12 +651,12 @@ namespace pcl
         *                         is combine_pixels times the old one
         * \param sub_image - the output image
         */
-      virtual void
+      PCL_EXPORTS virtual void
       getSubImage (int sub_image_image_offset_x, int sub_image_image_offset_y, int sub_image_width,
                    int sub_image_height, int combine_pixels, RangeImage& sub_image) const;
 
       //! Get a range image with half the resolution
-      virtual void
+      PCL_EXPORTS virtual void
       getHalfImage (RangeImage& half_image) const;
 
       //! Find the minimum and maximum range in the image
@@ -782,12 +782,12 @@ namespace pcl
 
 
       // =====STATIC PROTECTED=====
-      static const int lookup_table_size;
-      static std::vector<float> asin_lookup_table;
-      static std::vector<float> atan_lookup_table;
-      static std::vector<float> cos_lookup_table;
+      PCL_EXPORTS static const int lookup_table_size;
+      PCL_EXPORTS static std::vector<float> asin_lookup_table;
+      PCL_EXPORTS static std::vector<float> atan_lookup_table;
+      PCL_EXPORTS static std::vector<float> cos_lookup_table;
       /** Create lookup tables for trigonometric functions */
-      static void
+      PCL_EXPORTS static void
       createLookupTables ();
 
       /** Query the asin lookup table */
